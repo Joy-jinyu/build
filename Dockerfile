@@ -1,7 +1,7 @@
 FROM hub.c.163.com/library/node:latest
 COPY ./ /build
 WORKDIR /build
-RUN npm install && npm run build
+RUN npm config set registry https://registry.npm.taobao.org && npm install && npm run build
 
 FROM hub.c.163.com/library/nginx
 RUN mkdir /build
